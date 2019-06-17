@@ -1,0 +1,30 @@
+{% extends '../base.html' %}
+
+
+{% block content %}
+<!-- Listings -->
+<section id="listings" class="py-4">
+    <div class="container">
+            {% if listings %}
+            <div class="col-12">
+                <table id="customers">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                    {% for listing in listings  %}
+                    <tr>
+                        <td>{{listing.name}}</td>
+                        <td>{{listing.email}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% else %}
+            <div class="col-md-12">
+                <p>No Listings Available</p>
+            </div>
+            {% endif %}
+    </div>
+</section>
+{% endblock content %}

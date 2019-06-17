@@ -1,0 +1,29 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'myapp:index' %}">
+            <!-- <img src="{% static 'img/logo.png' %}" class="logo" alt=""> -->
+            <h4>Seedstar Challenge</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'myapp:index' %}">Home Page</a>
+                </li>
+                <li {% if '/add' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'myapp:add' %}">Add</a>
+                </li>
+                <li {% if '/list' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                    {% endif %}>
+                    <a class="nav-link" href="{% url 'myapp:list' %}">List</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
